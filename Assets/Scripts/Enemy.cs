@@ -1,0 +1,97 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    
+    public float movHor;
+    public float speed = 3f;
+    
+    public bool isGroundFloor = true;
+    public bool isGroundFront = false;
+    
+    public LayerMask groundLayer;
+    public float frontGrndRayDistance = 0.25f;
+    public float floorCheckY = 0.52f;
+    public float frontCheck = 0.51f;
+    public float frontDist = 0.001f;
+    
+    private RaycastHit2D hit;
+    
+    
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        //Evita caer en el precipicio
+        isGroundFloor = (Physics2D.Raycast(
+            new Vector3(transform.position.x, transform.position.y - floorCheckY, transform.position.z),
+            new Vector3(movHor, 0f, 0f), frontGrndRayDistance, groundLayer));
+
+        if (!isGroundFloor)
+            movHor = movHor * -1;
+
+        //Choque con pared
+        if (Physics2D.Raycast(transform.position, new Vector3(movHor, 0f, 0f), frontCheck, groundLayer))
+            movHor = movHor * -1;
+
+        //Choque con otro enemigo
+        hit = Physics2D.Raycast(
+            new Vector3(transform.position.x + movHor * frontCheck, transform.position.y, transform.position.z),
+            new Vector3(movHor, 0f, 0f), frontDist);
+        if (hit != null)
+            if (hit.transform != null)
+                if (hit.transform.CompareTag("Enemy"))
+                    movHor = movHor * -1;
+        
+        flip(movHor);
+
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(movHor * speed, rb.velocity.y);
+    }
+    
+    void flip (float movHor)
+    {
+        if (movHor > 0)
+        {
+            sr.flipX = true;
+        }
+        else if (movHor < 0)
+        {
+            sr.flipX = false;
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        // Dibuja el rayo de comprobación del suelo frontal
+        Gizmos.color = Color.blue;
+        Vector3 frontOrigin = new Vector3(transform.position.x + movHor * frontCheck, transform.position.y, transform.position.z);
+        Gizmos.DrawRay(frontOrigin, new Vector3(movHor, 0f, 0f) * frontDist);
+
+        // Dibuja el rayo de comprobación del suelo frontal en el editor
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(frontOrigin, frontCheck);
+
+        // Dibuja el rayo de comprobación del suelo inferior en el editor
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x, transform.position.y - floorCheckY, transform.position.z), frontGrndRayDistance);
+    }
+}
+
+/*if (hit != null)
+        if (hit.transform != null)
+            if (hit.transform.CompareTag("Enemy"))
+                shouldFlip = true;*/
+    
