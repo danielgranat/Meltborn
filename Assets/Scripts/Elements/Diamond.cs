@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Diamond : MonoBehaviour
@@ -11,7 +8,7 @@ public class Diamond : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.obj.addScore(1);//Modify this addScore Function in GAMEMANAGER for add Time to Timer
+            GameManager.obj.addScore(1, timeGiven);
             Destroy(gameObject);
         }
     }
