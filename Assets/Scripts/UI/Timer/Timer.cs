@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
 
         int min = (int)TIME.Value / 60;
         int sec = (int)TIME.Value % 60;
-        minText.text = min.ToString();
-        secText.text = sec.ToString();
+        minText.text = min.ToString("D2");
+        secText.text = sec.ToString("D2");
     }
 }

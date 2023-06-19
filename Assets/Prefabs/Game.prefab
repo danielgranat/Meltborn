@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TIME: {fileID: 11400000, guid: bf17ced96a59b45e9b62bd78872abd0c, type: 2}
+  CUBES: {fileID: 11400000, guid: 4744ddb7f8e644dd891fb1322edd7fae, type: 2}
   startMaxTime: 60
   maxLifes: 3
   gamePaused: 0

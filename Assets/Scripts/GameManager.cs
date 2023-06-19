@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] FloatVar TIME;
+    [SerializeField] FloatVar CUBES;
     [SerializeField] float startMaxTime = 60;
+    [SerializeField] int cubeToTime = 10;
     public static GameManager obj;
     
     public int maxLifes = 3;
     
     public bool gamePaused = false;
-    public int score = 0; /*This is for TImer, i put Score for a example*/
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         gamePaused = false;
         TIME.Value = startMaxTime;
+        CUBES.Value = 0;
     }
 
     private void Update()
@@ -37,8 +39,15 @@ public class GameManager : MonoBehaviour
 
     public void addScore(int points, float seconds) //Change this for add time to Timer
     {
-        score += points;
-        TIME.Increment(seconds);
+        CUBES.Increment(points);
+    }
+
+    public void convertCubesToTime(float cubes) //Change this for add time to Timer
+    {
+        if (CUBES.Value < cubes) cubes = CUBES.Value;
+
+        CUBES.Decrement(cubes);
+        TIME.Increment(cubes * cubeToTime);
     }
 
     public void gameOver()
