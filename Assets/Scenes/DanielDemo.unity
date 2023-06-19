@@ -919,7 +919,6 @@ GameObject:
   - component: {fileID: 717139618}
   - component: {fileID: 717139617}
   - component: {fileID: 717139616}
-  - component: {fileID: 717139615}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -948,19 +947,6 @@ RectTransform:
   m_AnchoredPosition: {x: -199.5, y: -21.699997}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &717139615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717139613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cd1413c699d404fb34eb36ef8cc077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TIME: {fileID: 11400000, guid: bf17ced96a59b45e9b62bd78872abd0c, type: 2}
 --- !u!114 &717139616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,7 +991,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 717139615}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AddTime, Assembly-CSharp
         m_MethodName: OnAddSec
         m_Mode: 3

@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] FloatVar TIME;
+    [SerializeField] FloatVar TIME; 
     [SerializeField] TextMeshProUGUI minText;
     [SerializeField] TextMeshProUGUI secText;
     [SerializeField] float startTime;
+    
+    private GameManager gameManager;
 
     private float timeFromStart;
 
@@ -17,6 +19,8 @@ public class Timer : MonoBehaviour
     {
         TIME.Value = startTime;
         timeFromStart = Time.realtimeSinceStartup;
+
+        gameManager = GameManager.obj;
     }
 
     // Update is called once per frame
