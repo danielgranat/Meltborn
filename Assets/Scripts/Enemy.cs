@@ -7,22 +7,24 @@ public class Enemy : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sr;
-    
+
     public float movHor;
     public float speed = 3f;
-    
+
     public bool isGroundFloor = true;
     public bool isGroundFront = false;
-    
+
     public LayerMask groundLayer;
     public float frontGrndRayDistance = 0.25f;
     public float floorCheckY = 0.52f;
     public float frontCheck = 0.51f;
     public float frontDist = 0.001f;
-    
+
+    private bool canFlip = true;
+
     private RaycastHit2D hit;
-    
-    
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,37 +33,39 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        //Evita caer en el precipicio
-        isGroundFloor = (Physics2D.Raycast(
+        // Evita caer en el precipicio
+        isGroundFloor = Physics2D.Raycast(
             new Vector3(transform.position.x, transform.position.y - floorCheckY, transform.position.z),
-            new Vector3(movHor, 0f, 0f), frontGrndRayDistance, groundLayer));
+            new Vector3(movHor, 0f, 0f), frontGrndRayDistance, groundLayer);
 
         if (!isGroundFloor)
             movHor = movHor * -1;
 
-        //Choque con pared
-        if (Physics2D.Raycast(transform.position, new Vector3(movHor, 0f, 0f), frontCheck, groundLayer))
+        // Choque con pared
+        Vector3 frontOrigin = new Vector3(transform.position.x + movHor * frontCheck, transform.position.y, transform.position.z);
+
+        if (Physics2D.OverlapCircle(frontOrigin, frontCheck, groundLayer))
             movHor = movHor * -1;
 
-        //Choque con otro enemigo
-        hit = Physics2D.Raycast(
-            new Vector3(transform.position.x + movHor * frontCheck, transform.position.y, transform.position.z),
-            new Vector3(movHor, 0f, 0f), frontDist);
-        if (hit != null)
-            if (hit.transform != null)
-                if (hit.transform.CompareTag("Enemy"))
-                    movHor = movHor * -1;
         
         flip(movHor);
-
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(movHor * speed, rb.velocity.y);
     }
-    
-    void flip (float movHor)
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            movHor = movHor * -1;
+            flip(movHor);
+        }
+    }
+
+    void flip(float movHor)
     {
         if (movHor > 0)
         {
@@ -72,7 +76,7 @@ public class Enemy : MonoBehaviour
             sr.flipX = false;
         }
     }
-    
+
     private void OnDrawGizmos()
     {
         // Dibuja el rayo de comprobación del suelo frontal
@@ -90,8 +94,20 @@ public class Enemy : MonoBehaviour
     }
 }
 
+
 /*if (hit != null)
         if (hit.transform != null)
             if (hit.transform.CompareTag("Enemy"))
                 shouldFlip = true;*/
-    
+
+
+//Choque con otro enemigo
+/*hit = Physics2D.Raycast(
+    new Vector3(transform.position.x + movHor * frontCheck, transform.position.y, transform.position.z),
+    new Vector3(movHor, 0f, 0f), frontDist);
+if (hit != null)
+    if (hit.transform != null)
+        if (hit.transform.CompareTag("Enemy"))
+            movHor = movHor * -1;
+
+flip(movHor);*/

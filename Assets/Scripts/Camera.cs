@@ -17,14 +17,14 @@ public class Camera : MonoBehaviour
     public Transform mountains;
     public float factor3 = 1f;
     
-    public Transform clouds4;
+    /*public Transform clouds4;
     public float factor4 = 1f;
     
     public Transform clouds5;
     public float factor5 = 1f;
     
     public Transform sky;
-    public float factor6 = 1f;
+    public float factor6 = 1f;*/
     
     private float displacement;
     private float iniCamPosFrame;
@@ -44,8 +44,8 @@ public class Camera : MonoBehaviour
         clouds2.position = new Vector3(clouds2.position.x + (nextCamPosFrame - iniCamPosFrame) * factor1, clouds2.position.y, clouds2.position.z);
         clouds3.position = new Vector3(clouds3.position.x + (nextCamPosFrame - iniCamPosFrame) * factor2, clouds3.position.y, clouds3.position.z);
         mountains.position = new Vector3(mountains.position.x + (nextCamPosFrame - iniCamPosFrame) * factor3, mountains.position.y, mountains.position.z);
-        clouds4.position = new Vector3(clouds4.position.x + (nextCamPosFrame - iniCamPosFrame) * factor4, clouds4.position.y, clouds4.position.z);
+        /*clouds4.position = new Vector3(clouds4.position.x + (nextCamPosFrame - iniCamPosFrame) * factor4, clouds4.position.y, clouds4.position.z);
         clouds5.position = new Vector3(clouds5.position.x + (nextCamPosFrame - iniCamPosFrame) * factor5, clouds5.position.y, clouds5.position.z);
-        sky.position = new Vector3(sky.position.x + (nextCamPosFrame - iniCamPosFrame) * factor6, sky.position.y, sky.position.z);
+        sky.position = new Vector3(sky.position.x + (nextCamPosFrame - iniCamPosFrame) * factor6, sky.position.y, sky.position.z);*/
     }
 }
