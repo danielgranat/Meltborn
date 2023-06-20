@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        movHor = 1;
     }
 
     private void Update()
@@ -38,7 +39,7 @@ public class Enemy : MonoBehaviour
             new Vector3(transform.position.x, transform.position.y - floorCheckY, transform.position.z),
             new Vector3(movHor, 0f, 0f), frontGrndRayDistance, groundLayer);
 
-        if (!isGroundFloor)
+        if (isGroundFloor)
             movHor = movHor * -1;
 
         // Choque con pared
