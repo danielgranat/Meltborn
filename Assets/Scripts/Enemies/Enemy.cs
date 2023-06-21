@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
 
     public float movHor;
     public float speed = 3f;
+    public int maxDemage;
+    public GameObject spawnCubePref;
+    public int cubesToSpawn = 3;
 
     public bool isGroundFloor = true;
     public bool isGroundFront = false;
@@ -23,12 +26,14 @@ public class Enemy : MonoBehaviour
     private bool canFlip = true;
 
     private RaycastHit2D hit;
+    private int currDemage;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        currDemage = maxDemage;
         movHor = 1;
     }
 
@@ -63,6 +68,29 @@ public class Enemy : MonoBehaviour
         {
             movHor = movHor * -1;
             flip(movHor);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            if (!collision.gameObject.active) return;
+
+            currDemage -= 1;
+            collision.gameObject.SetActive(false);
+            //Destroy(collision.gameObject);
+            Debug.Log($"currDemage:{currDemage}");
+            if(currDemage == 0)
+            {
+                for(int idx = 0; idx < cubesToSpawn; idx++)
+                {
+                    GameObject cube = Instantiate(spawnCubePref, transform.position, transform.rotation);
+                    cube.transform.position = cube.transform.position + new Vector3(UnityEngine.Random.Range(-1, 1), 1, 0);
+                }
+                
+                Destroy(gameObject);
+            }
         }
     }
 

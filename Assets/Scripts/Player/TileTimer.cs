@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileTimer : MonoBehaviour
 {
-    bool player = false;
+    //bool player = false;
     //float player
     
     // Update is called once per frame

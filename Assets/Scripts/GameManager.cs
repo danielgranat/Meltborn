@@ -10,11 +10,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] FloatVar CUBES;
     [SerializeField] float startMaxTime = 60;
     [SerializeField] int cubeToTime = 10;
+    [SerializeField] private float initialCubes = 0;
     public static GameManager obj;
     
     public int maxLifes = 3;
     
     public bool gamePaused = false;
+    
 
     private void Awake()
     {
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour
         //Time.timeScale = 0.2f;
         gamePaused = false;
         TIME.Value = startMaxTime;
-        CUBES.Value = 0;
+        CUBES.Value = initialCubes;
     }
 
     private void Update()
