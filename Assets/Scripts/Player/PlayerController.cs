@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = false;
     public bool isMoving = false;
     public bool isInmune = false;
-    
+    public bool isDemage = false;
+
     public float speed = 5f;
     public float jumpForce = 5f;
     public float movHor;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
 
     private bool facingRight = true;
+    private float lastHitTime;
 
     void Awake()
     {
@@ -90,6 +92,32 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && Time.realtimeSinceStartup - lastHitTime > 1 )
+        {
+            lastHitTime = Time.realtimeSinceStartup;
+            Debug.Log($"Enemy hit, {collision.gameObject.name}");
+            GameManager.obj.enemyDemage();
+            anim.SetTrigger("isHit");
+            Vector3 dir = (collision.gameObject.transform.position - gameObject.transform.position).normalized;
+            Vector2 velocity = Vector2.right;
+            if (dir.x < 0)
+            {
+                // hit from left
+                velocity.x *= -1;
+            }
+            //else if (dir.x < 0)
+            //{
+            //    // hit from right
+            //    velocity.x = 1;
+            //}
+
+            Debug.Log($"velocity:{velocity * jumpForce}");
+            rb.AddForce(velocity * jumpForce,ForceMode2D.Impulse);
+        }
     }
 
 }

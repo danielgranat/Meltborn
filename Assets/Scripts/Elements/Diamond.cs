@@ -8,7 +8,7 @@ public class Diamond : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.obj.addScore(1, timeGiven);
+            GameManager.obj.addScore(1);
             
             //FXManager.obj.showPop(transform.position);
             Destroy(gameObject);

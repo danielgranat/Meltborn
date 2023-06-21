@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float startMaxTime = 60;
     [SerializeField] int cubeToTime = 10;
     [SerializeField] private float initialCubes = 0;
+    [SerializeField] private int enemyInflictedDemage;
     public static GameManager obj;
     
     public int maxLifes = 3;
@@ -36,13 +37,22 @@ public class GameManager : MonoBehaviour
         if (TIME.Value <= 0)
         {
             //We probably want some kind of "Game Over" screen here.
-            SceneManager.LoadScene(0);
+            gameOver();
         }
     }
 
-    public void addScore(int points, float seconds) //Change this for add time to Timer
+    public void addScore(int points) //Change this for add time to Timer
     {
         CUBES.Increment(points);
+    }
+
+    public void enemyDemage() //Change this for add time to Timer
+    {
+        CUBES.Decrement(enemyInflictedDemage);
+        if(CUBES.Value < 0)
+        {
+            gameOver();
+        }
     }
 
     public void convertCubesToTime(float cubes) //Change this for add time to Timer
@@ -55,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
+        //SceneManager.LoadScene("Main");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
