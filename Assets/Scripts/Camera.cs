@@ -33,7 +33,9 @@ public class Camera : MonoBehaviour
     private void Update()
     {
         iniCamPosFrame = transform.position.x;
-        transform.position = new Vector3(PlayerController.obj.transform.position.x, transform.position.y, transform.position.z);
+        //transform.position = new Vector3(PlayerController.obj.transform.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(PlayerController.obj.transform.position.x, PlayerController.obj.transform.position.y, transform.position.z);
+
     }
 
     private void LateUpdate()
