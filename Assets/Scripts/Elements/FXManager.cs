@@ -16,7 +16,7 @@ public class FXManager : MonoBehaviour
     
     public void showPop(Vector3 pos)
     {
-        pop.gameObject.GetComponent<Pop>().show(pos); //con esta linea se llama al metodo show de la clase Pop
+        //pop.gameObject.GetComponent<Pop>().show(pos); //con esta linea se llama al metodo show de la clase Pop
     }
 
     private void OnDestroy()

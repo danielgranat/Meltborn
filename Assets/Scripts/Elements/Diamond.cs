@@ -10,7 +10,7 @@ public class Diamond : MonoBehaviour
         {
             GameManager.obj.addScore(1, timeGiven);
             
-            FXManager.obj.showPop(transform.position);
+            //FXManager.obj.showPop(transform.position);
             Destroy(gameObject);
         }
     }

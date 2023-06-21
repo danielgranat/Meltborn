@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 49efdb08e80d94204849ee1f6f0582a9
+guid: 9f8e2fbfe868b4a90b5a6fbc88f30717
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -45,14 +45,14 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  alignment: 9
+  spritePivot: {x: 0.057280406, y: 0.48850077}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 451, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,220 +101,201 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack2_0
+      name: icicle_0-0_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 49
-        width: 82
-        height: 79
+        x: 0
+        y: 23
+        width: 64
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86c19bb2e25c5443780358876ee1c078
-      internalID: 1929222899
+      spriteID: c6e4c8d0ba539430f8f824f8dbbeb5b5
+      internalID: 1974999081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack2_1
+      name: icicle_0-0_1
       rect:
         serializedVersion: 2
-        x: 317
-        y: 49
-        width: 79
-        height: 84
+        x: 64
+        y: 23
+        width: 64
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7879a5728c0df474ba58199f068584fc
-      internalID: -208652084
+      spriteID: a25fb8b64990443d89247169546f194c
+      internalID: -18000341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack2_2
+      name: icicle_0-0_2
       rect:
         serializedVersion: 2
-        x: 540
-        y: 49
-        width: 76
-        height: 87
+        x: 128
+        y: 23
+        width: 64
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34d65366cd3c94432b942c751fb2b80b
-      internalID: -1240328424
+      spriteID: 793053f783af34b34aa71a60dca01686
+      internalID: 77025274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack2_3
+      name: icicle_0-0_3
       rect:
         serializedVersion: 2
-        x: 783
-        y: 48
-        width: 81
-        height: 84
+        x: 192
+        y: 23
+        width: 64
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0571f8cda12e547f7834b5432a2fa240
-      internalID: 765316195
+      spriteID: 172e50a569e9a4b80a4f6f0d9dcff29b
+      internalID: 221610266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack2_4
+      name: icicle_0-0_4
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 49
-        width: 96
-        height: 88
+        x: 256
+        y: 23
+        width: 64
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62fa6635a34b54c24bd78934f6776364
-      internalID: -879838497
+      spriteID: 8a8bb837d4a41414f93a14805585fad9
+      internalID: -1298435373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack2_5
+      name: icicle_0-0_5
       rect:
         serializedVersion: 2
-        x: 1245
-        y: 49
-        width: 130
-        height: 86
+        x: 320
+        y: 23
+        width: 64
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a52f390dca8441babe17ba34374fb55
-      internalID: -549307738
+      spriteID: 18a333bf397f340b0940bb10694518e9
+      internalID: 250621448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack2_6
+      name: icicle_0-0_6
       rect:
         serializedVersion: 2
-        x: 1477
-        y: 49
-        width: 134
-        height: 96
-      alignment: 9
-      pivot: {x: 0.3215915, y: 0.4446601}
+        x: 384
+        y: 23
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f43851f9f3684d89ad2a5e9a00d2059
-      internalID: 1763691518
+      spriteID: 99965259dff7d46c3a75de15a113e756
+      internalID: -1179925723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack2_7
+      name: icicle_0-0_7
       rect:
         serializedVersion: 2
-        x: 1707
-        y: 49
-        width: 140
-        height: 105
+        x: 448
+        y: 23
+        width: 64
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96642e1516ae546d099ca9f7976a038f
-      internalID: 1865929053
+      spriteID: 223b0514f6f074fd1bc3e15c40a51063
+      internalID: 1127493476
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: -255, y: -30}
+      - {x: -256, y: 30}
+      - {x: -196, y: 30}
+      - {x: -196, y: -3}
+      - {x: -196, y: -30}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack2_5: -549307738
-      Attack2_6: 1763691518
-      Attack2_4: -879838497
-      Attack2_2: -1240328424
-      Attack2_7: 1865929053
-      Attack2_1: -208652084
-      Attack2_3: 765316195
-      Attack2_0: 1929222899
+      icicle_0-0_2: 77025274
+      icicle_0-0_5: 250621448
+      icicle_0-0_7: 1127493476
+      icicle_0-0_1: -18000341
+      icicle_0-0_4: -1298435373
+      icicle_0-0_0: 1974999081
+      icicle_0-0_3: 221610266
+      icicle_0-0_6: -1179925723
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

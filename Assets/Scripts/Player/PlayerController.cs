@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
 
+    private bool facingRight = true;
+
     void Awake()
     {
         obj = this;
@@ -75,13 +77,11 @@ public class PlayerController : MonoBehaviour
 
     private void flip (float movHor) /*REVISAR*/
     {
-        if (movHor < 0)
+        if ((movHor < 0 && facingRight) || (movHor > 0 && !facingRight))
         {
-            sr.flipX = true;
-        }
-        else if (movHor > 0)
-        {
-            sr.flipX = false;
+            //sr.flipX = true;
+            facingRight = !facingRight;
+            transform.Rotate(0, 180, 0);
         }
     }
 

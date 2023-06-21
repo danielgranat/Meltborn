@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7119230915920365466}
   - component: {fileID: 7119230915920365467}
+  - component: {fileID: 1422863522}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -47,6 +48,19 @@ MonoBehaviour:
   TIME: {fileID: 11400000, guid: bf17ced96a59b45e9b62bd78872abd0c, type: 2}
   CUBES: {fileID: 11400000, guid: 4744ddb7f8e644dd891fb1322edd7fae, type: 2}
   startMaxTime: 60
+  cubeToTime: 10
   maxLifes: 3
   gamePaused: 0
-  score: 0
+--- !u!114 &1422863522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119230915920365464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55778b4a2c0088546b3f4e6535519190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 0}
