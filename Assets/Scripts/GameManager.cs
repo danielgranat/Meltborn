@@ -65,10 +65,14 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
-        //SceneManager.LoadScene("Main");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(2);
     }
-    
+
+    public void gameWin()
+    {
+        SceneManager.LoadScene(3);
+    }
+
 
     private void OnDestroy()
     {

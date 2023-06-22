@@ -176,7 +176,7 @@ MonoBehaviour:
   isInmune: 0
   isDemage: 0
   speed: 5
-  jumpForce: 10
+  jumpForce: 16
   movHor: 0
   inmuneTimeCnt: 0
   inmuneTime: 0.5
