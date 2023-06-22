@@ -27,18 +27,25 @@ public class Enemy : MonoBehaviour
 
     private RaycastHit2D hit;
     private int currDemage;
+    private HealthBar healthBar;
 
 
-    private void Start()
+    public float DemagePercent => currDemage / (float)maxDemage;
+
+
+    protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        healthBar = GetComponentInChildren<HealthBar>();
         currDemage = maxDemage;
         movHor = 1;
     }
 
-    private void Update()
+    protected void Update()
     {
+        healthBar.Health = DemagePercent;
+
         // Evita caer en el precipicio
         isGroundFloor = Physics2D.Raycast(
             new Vector3(transform.position.x, transform.position.y - floorCheckY, transform.position.z),
@@ -59,7 +66,8 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(movHor * speed, rb.velocity.y);
+        if(speed > 0)
+            rb.velocity = new Vector2(movHor * speed, rb.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

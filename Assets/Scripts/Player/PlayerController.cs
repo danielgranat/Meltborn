@@ -66,7 +66,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(movHor * speed, rb.velocity.y);
+        if(Time.realtimeSinceStartup - lastHitTime > 1)
+            rb.velocity = new Vector2(movHor * speed, rb.velocity.y);
     }
     
     public void jump()
@@ -98,26 +99,36 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && Time.realtimeSinceStartup - lastHitTime > 1 )
         {
-            lastHitTime = Time.realtimeSinceStartup;
-            Debug.Log($"Enemy hit, {collision.gameObject.name}");
-            GameManager.obj.enemyDemage();
-            anim.SetTrigger("isHit");
-            Vector3 dir = (collision.gameObject.transform.position - gameObject.transform.position).normalized;
-            Vector2 velocity = Vector2.right;
-            if (dir.x < 0)
-            {
-                // hit from left
-                velocity.x *= -1;
-            }
-            //else if (dir.x < 0)
-            //{
-            //    // hit from right
-            //    velocity.x = 1;
-            //}
-
-            Debug.Log($"velocity:{velocity * jumpForce}");
-            rb.AddForce(velocity * jumpForce,ForceMode2D.Impulse);
+            takeHit(collision.gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("FBProjectile"))
+        {
+            if (!collision.gameObject.active) return;
+
+            takeHit(collision.gameObject);
+        }
+    }
+
+    private void takeHit(GameObject other)
+    {
+        lastHitTime = Time.realtimeSinceStartup;
+        Debug.Log($"Enemy hit, {other.name}");
+        GameManager.obj.enemyDemage();
+        anim.SetTrigger("isHit");
+        Vector3 dir = (other.transform.position - gameObject.transform.position).normalized;
+        Vector2 velocity = new Vector2(dir.x*-1, 1);
+        //if (dir.x < 0)
+        //{
+        //    velocity.x *= -1;
+        //}
+        
+        Debug.Log($"velocity:{velocity * jumpForce}");
+        rb.velocity = new Vector2(velocity.x * speed, jumpForce/2);
+        //rb.AddForce(velocity * jumpForce, ForceMode2D.Impulse);
     }
 
 }

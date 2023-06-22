@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 1458138702559968568}
   - component: {fileID: 1458138702559968571}
   - component: {fileID: 844717333590524331}
-  m_Layer: 0
+  - component: {fileID: 1664277199}
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -144,7 +145,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -155,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.78125, y: 2.6875}
+  m_Size: {x: 1, y: 2.6875}
   m_EdgeRadius: 0
 --- !u!114 &1458138702559968571
 MonoBehaviour:
@@ -173,6 +174,7 @@ MonoBehaviour:
   isGrounded: 0
   isMoving: 0
   isInmune: 0
+  isDemage: 0
   speed: 5
   jumpForce: 10
   movHor: 0
@@ -197,10 +199,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubePrefab: {fileID: 6657507914829299768, guid: 4308bbe820fd2446a9b2483665b1a0cb, type: 3}
   cubeSpawn: {fileID: 670324157187830294}
-  attackInterval: 2
+  attackInterval: 1
   shootSpeed: 20
   spawnOffset: 0.7
   CUBES: {fileID: 11400000, guid: 4744ddb7f8e644dd891fb1322edd7fae, type: 2}
+--- !u!70 &1664277199
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458138702559968565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.45}
+  m_Size: {x: 1.89, y: 0.66}
+  m_Direction: 1
 --- !u!1 &4624954527444219953
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 670324157187830294}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CubeSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
