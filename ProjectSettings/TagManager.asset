@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - Projectile
   - FBProjectile
+  - AudioSave
   layers:
   - Default
   - TransparentFX
