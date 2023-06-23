@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Scenes/Main.unity
     guid: 251d43c95a06a4057a16de8379c3047e
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: 1e91867858e754774a2041d4433db7ca
+    path: Assets/Scenes/Demo.unity
+    guid: e23751b98014660498b30a4e316d6279
   - enabled: 1
     path: Assets/Scenes/UI Scenes/GameOver.unity
     guid: fae0c325c94fc4723b2d021f2666620d
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Credits.unity
     guid: 826a8df9a6f06400f8b43ecf684ad576
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 1e91867858e754774a2041d4433db7ca
   m_configObjects: {}
