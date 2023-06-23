@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f59491672ab44478aa0f1f6aabfc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plyrAudio: {fileID: 0}
+  plyrAudio: {fileID: 361575924}
   attackAud:
   - {fileID: 8300000, guid: 76ba42908dc1344a8bc5c7474053b84f, type: 3}
   - {fileID: 8300000, guid: 1bf046b2373d34719a25ce0371b55d45, type: 3}
