@@ -9256,6 +9256,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff887f2c495c5a4d967e33a6d25d9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1396220951 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1539943775487188944, guid: b2fca08cac06c4fc28624df40ef0b1d6, type: 3}
+  m_PrefabInstance: {fileID: 1042618550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400157343
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,6 +10336,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344361750}
     m_Modifications:
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: cubeAudio
+      value: 
+      objectReference: {fileID: 1396220951}
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: CubeBreak.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: CubeBreak.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c94734c33e6684316b6404e330985fd8, type: 3}
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: CubeBreak.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 32ffc6ae532fc41809c79b8b21a29436, type: 3}
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: CubeBreak.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a3ca36be1f5fc455494b793fb8b786c6, type: 3}
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: CubeBreak.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3940745ea516e46de91ac5d2c135b108, type: 3}
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: CubeBreak.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: c2a70a57df9184dd8a54a4a1ac89d133, type: 3}
+    - target: {fileID: 6657507914829299715, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
+      propertyPath: CubeBreak.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: be8cbfdcd6fe44850bc333d5d5c61db7, type: 3}
     - target: {fileID: 6657507914829299717, guid: 92369c1f17177472aaeec4604cefcdd4, type: 3}
       propertyPath: m_RootOrder
       value: 0
