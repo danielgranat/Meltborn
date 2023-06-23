@@ -45,7 +45,6 @@ public class ThrowCube : MonoBehaviour
                 isAttacking = true;
                 attackStartTime = Time.realtimeSinceStartup;
                 anim.SetTrigger("isThrowing");
-                CUBES.Decrement(1);
             }
         }
         else
@@ -67,6 +66,7 @@ public class ThrowCube : MonoBehaviour
     private void shoot()
     {
         cubeSpawned = true;
+        CUBES.Decrement(1);
         GameObject cube = Instantiate(cubePrefab, cubeSpawn.position, transform.rotation);
         cube.transform.position = cubeSpawn.position;
         Rigidbody2D crb = cube.GetComponent<Rigidbody2D>();

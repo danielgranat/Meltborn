@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Fire
   - Projectile
+  - FBProjectile
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - Ground
   - Enemy
   - Fire
-  - 
-  - 
-  - 
+  - Sensor
+  - Projectile
+  - Player
   - 
   - 
   - 
@@ -44,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3631349817
     locked: 0
