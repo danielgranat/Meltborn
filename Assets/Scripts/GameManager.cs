@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        //Time.timeScale = 0.2f;
+        //Time.timeScale = 2f;
         gamePaused = false;
         TIME.Value = startMaxTime;
         CUBES.Value = initialCubes;
