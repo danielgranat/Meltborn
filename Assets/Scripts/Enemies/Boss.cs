@@ -50,7 +50,7 @@ public class Boss : Enemy
 
     }
 
-    new protected void OnDemageZero()
+    override protected void OnDemageZero()
     {
         GameManager.obj.gameWin();
     }

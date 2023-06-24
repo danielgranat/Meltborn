@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected void OnDemageZero()
+    virtual protected void OnDemageZero()
     {
         Destroy(gameObject);
     }
