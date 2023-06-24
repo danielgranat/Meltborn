@@ -96,10 +96,15 @@ public class Enemy : MonoBehaviour
                     GameObject cube = Instantiate(spawnCubePref, transform.position, transform.rotation);
                     cube.transform.position = cube.transform.position + new Vector3(UnityEngine.Random.Range(-1, 1), 1, 0);
                 }
-                
-                Destroy(gameObject);
+
+                OnDemageZero();
             }
         }
+    }
+
+    protected void OnDemageZero()
+    {
+        Destroy(gameObject);
     }
 
     void flip(float movHor)

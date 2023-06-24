@@ -49,4 +49,9 @@ public class Boss : Enemy
         fbrb.velocity = dir * shootSpeed;
 
     }
+
+    new protected void OnDemageZero()
+    {
+        GameManager.obj.gameWin();
+    }
 }

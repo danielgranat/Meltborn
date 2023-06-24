@@ -12,12 +12,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] int cubeToTime = 10;
     [SerializeField] private float initialCubes = 0;
     [SerializeField] private int enemyInflictedDemage;
+    [SerializeField] private AudioClip[] CubeBreak;
+
     public static GameManager obj;
+    public AudioSource cubeAudio;
     
+
     public int maxLifes = 3;
     
     public bool gamePaused = false;
-    
 
     private void Awake()
     {
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
         gamePaused = false;
         TIME.Value = startMaxTime;
         CUBES.Value = initialCubes;
+        cubeAudio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -43,6 +47,11 @@ public class GameManager : MonoBehaviour
 
     public void addScore(int points) //Change this for add time to Timer
     {
+        if (points > 0)
+        {
+            cubeAudio.clip = CubeBreak[UnityEngine.Random.Range(0, CubeBreak.Length)];
+            cubeAudio.PlayOneShot(cubeAudio.clip);
+        }
         CUBES.Increment(points);
     }
 
